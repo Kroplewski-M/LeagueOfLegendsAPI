@@ -1,4 +1,13 @@
-//import axios from "axios";
+const { createApp } = Vue;
+
+createApp({
+  data() {
+    return {
+      title: "Summoner Account",
+      summonerID: " ",
+    };
+  },
+}).mount("#app");
 
 const riot_key = "RGAPI-bdacdafb-a31a-466d-bf68-116534bbfeac";
 
@@ -7,8 +16,12 @@ function searchForPlayer(summonerName) {
 
   fetch(APICallString)
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => {
+      console.log(data.name);
+      console.log(data.summonerLevel);
+      console.log(data);
+    })
     .catch((error) => console.log(error));
 }
 
-searchForPlayer("M4T789");
+searchForPlayer("JacketsAreWarm");

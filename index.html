@@ -9,7 +9,31 @@
     
 </head>
 <body>
-    <h1>League of Legends Summoner</h1>
+    <div id="app">
+        <h1 id="title">{{title}}</h1>
+        <form action="">
+            <label for="summonerID">Summoner ID:</label>
+            <input id="summonerID" name="summonerID" v-model="summonerID"/>
+
+            <label for="server">Server:</label>
+            <select id="server" name="server">
+                <option value="BR1">BR1</option>
+                <option value="EUN1">EUN1</option>
+                <option value="EUW1">EUW1</option>
+                <option value="JP1">JP1</option>
+                <option value="KR">KR</option>
+                <option value="LA1">LA1</option>
+                <option value="LA2">LA2</option>
+                <option value="NA1">NA1</option>
+                <option value="OC1">OC1</option>
+                <option value="TR1">TR1</option>
+                <option value="RU">RU</option>
+
+            </select>
+        </form>
+        <p>{{summonerID}}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
     <script src="script.js"></script>
 </body>
 </html>
