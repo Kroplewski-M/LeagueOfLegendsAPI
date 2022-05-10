@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>League Summoner</title>
+    <title>Summoner Account</title>
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -14,7 +14,7 @@
         <form  @submit.prevent="searchForPlayer">
             <label for="summonerID">Summoner ID:</label>
             <input id="summonerID" name="summonerID" v-model="summonerID" required/>
-
+            <br>
             <label for="server">Server:</label>
             <select id="server" name="server" v-model="server" required>
                 <option value="br1">BR1</option>
@@ -28,10 +28,12 @@
                 <option value="oc1">OC1</option>
                 <option value="tr1">TR1</option>
                 <option value="ru">RU</option>
-
+                
             </select>
             <button>Search</button>
         </form>
+        <br><br><br>
+        <summoner-details :name='summonerName' :level='summonerLevel' :summonericon='summonerIcon' id="summonerInfo" />
         
     </div>
     <script src="https://unpkg.com/vue@3"></script>

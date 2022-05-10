@@ -1,12 +1,15 @@
-const { createApp } = Vue;
-
-createApp({
+let app = Vue.createApp({
   data() {
     return {
-      riot_key: "RGAPI-bdacdafb-a31a-466d-bf68-116534bbfeac",
+      riot_key: "RGAPI-f6d3f0d8-c420-47ce-9eda-71885ddc4414",
       title: "Summoner Account",
-      summonerID: " ",
-      server: " ",
+      summonerID: "",
+      server: "",
+      iconID: "",
+      //DISPLAYED VALUES
+      summonerName: "",
+      summonerLevel: "",
+      summonerIcon: "",
     };
   },
   methods: {
@@ -16,11 +19,23 @@ createApp({
       fetch(APICallString)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data.name);
-          console.log(data.summonerLevel);
-          console.log(data);
+          this.iconID = data.profileIconId;
+          this.summonerName = data.name;
+          this.summonerLevel = data.summonerLevel;
+          this.summonerIcon = `https://ddragon.leagueoflegends.com/cdn/11.21.1/img/profileicon/${this.iconID}.png`;
         })
         .catch((error) => console.log(error));
     },
   },
-}).mount("#app");
+});
+app.component("summoner-details", {
+  template: `
+    <div id='info'>
+    <h1>{{name}}</h1>
+    <img height='100' width='100' :src="summonericon" alt='icon'/>
+    <p>Level : {{level}}</p>
+    </div>
+    `,
+  props: ["name", "level", "summonericon"],
+}),
+  app.mount("#app");
