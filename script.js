@@ -10,6 +10,7 @@ let app = Vue.createApp({
       summonerName: "",
       summonerLevel: "",
       summonerIcon: "",
+      showDetails: false,
     };
   },
   methods: {
@@ -23,6 +24,7 @@ let app = Vue.createApp({
           this.summonerName = data.name;
           this.summonerLevel = data.summonerLevel;
           this.summonerIcon = `https://ddragon.leagueoflegends.com/cdn/11.21.1/img/profileicon/${this.iconID}.png`;
+          this.showDetails = true;
         })
         .catch((error) => console.log(error));
     },
@@ -30,12 +32,12 @@ let app = Vue.createApp({
 });
 app.component("summoner-details", {
   template: `
-    <div id='info'>
+    <div id='info' v-if="showdetails">
     <h1 id="name">{{name}}</h1>
     <img id="icon" height='100' width='100' :src="summonericon" alt='icon'/>
     <p id="level">Level : {{level}}</p>
     </div>
     `,
-  props: ["name", "level", "summonericon"],
+  props: ["name", "level", "summonericon", "showdetails"],
 }),
   app.mount("#app");

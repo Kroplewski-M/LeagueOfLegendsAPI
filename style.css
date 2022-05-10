@@ -32,6 +32,8 @@ html{
 }
 #icon{
     margin-left: 3.5em;
+    border-radius: 50%;
+    border:2px solid gold;
 }
 #level{
     margin-left: 4em;
