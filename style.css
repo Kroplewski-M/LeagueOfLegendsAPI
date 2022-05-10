@@ -1,15 +1,38 @@
+@font-face{
+    font-family: LeagueFont;
+    src: url(/resources/Friz\ Quadrata\ Regular.ttf);
+}
 [v-cloak]{
     display: none;
 }
+*{
+    font-family: LeagueFont;
+}
+html{
+    background-color: #9615DB;
+}
+
 #app{
+  margin: 0;
   display: grid;
   justify-content: center;
 }
 #summonerInfo{
   border:2px solid black;
   margin-left: 25%;
-  width: 50%;
+  width: auto;
 }
 #info{
+    display: grid;
     justify-content: center;
+}
+#name{
+   font-size:large;
+   padding-left: 1.5em;
+}
+#icon{
+    margin-left: 3.5em;
+}
+#level{
+    margin-left: 4em;
 }

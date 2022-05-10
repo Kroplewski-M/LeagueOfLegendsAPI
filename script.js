@@ -31,9 +31,9 @@ let app = Vue.createApp({
 app.component("summoner-details", {
   template: `
     <div id='info'>
-    <h1>{{name}}</h1>
-    <img height='100' width='100' :src="summonericon" alt='icon'/>
-    <p>Level : {{level}}</p>
+    <h1 id="name">{{name}}</h1>
+    <img id="icon" height='100' width='100' :src="summonericon" alt='icon'/>
+    <p id="level">Level : {{level}}</p>
     </div>
     `,
   props: ["name", "level", "summonericon"],
