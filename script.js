@@ -1,7 +1,7 @@
 let app = Vue.createApp({
   data() {
     return {
-      riot_key: "RGAPI-f6d3f0d8-c420-47ce-9eda-71885ddc4414",
+      riot_key: "RGAPI-847e8fb5-84a1-41c5-bb3e-5f8d65a906d8",
       title: "Summoner Account",
       summonerID: "",
       server: "",

@@ -9,7 +9,18 @@
     font-family: LeagueFont;
 }
 html{
-    background-color: #9615DB;
+    background-image: url('./resources/lol-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#title{
+    text-shadow: 2px 2px white;
+}
+#summonerLabel{
+    text-shadow: 2px 2px white;
+}
+#serverLabel{
+    text-shadow: 2px 2px white;
 }
 
 #app{
@@ -18,23 +29,48 @@ html{
   justify-content: center;
 }
 #summonerInfo{
-  border:2px solid black;
+  border-radius: 25px;
+  border:5px solid grey;
   margin-left: 25%;
   width: auto;
+
+  background: url(./resources/info-background.jpg);
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: cover;
 }
+
 #info{
     display: grid;
     justify-content: center;
 }
 #name{
    font-size:large;
-   padding-left: 1.5em;
+   text-align: center;
 }
 #icon{
+   align-items: center;
     margin-left: 3.5em;
     border-radius: 50%;
     border:2px solid gold;
 }
 #level{
-    margin-left: 4em;
+    text-align: center;
+}
+#btn{
+    font-size: 13px;
+    padding: 7px 11px;
+
+    background-color: transparent;
+    border-radius: 4px;
+    border: 2px solid gold;
+    color: black;
+    text-shadow: 1px 1px white;
+    cursor: pointer;
+}
+#btn:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#btn:active{
+    transform: translateY(3px);
 }
